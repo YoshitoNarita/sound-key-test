@@ -8,19 +8,10 @@
 <body>
   <h1>Sound Key</h1>
 
-  <button id="playBtn">▶ 再生する</button>
-
-  <audio id="player" preload="metadata" controls style="display:block; margin-top:12px; width:100%;">
+  <audio controls>
     <source src="song.wav" type="audio/wav">
+    Your browser does not support audio.
   </audio>
-
-  <script>
-    const btn = document.getElementById("playBtn");
-    const player = document.getElementById("player");
-    btn.addEventListener("click", async () => {
-      try { await player.play(); } catch(e) { console.log(e); }
-    });
-  </script>
 
 </body>
 </html>
