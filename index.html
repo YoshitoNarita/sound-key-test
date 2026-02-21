@@ -1,11 +1,26 @@
 <!doctype html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sound Key</title>
 </head>
 <body>
   <h1>Sound Key</h1>
-  <p>これは実験ページです。</p>
+
+  <button id="playBtn">▶ 再生する</button>
+
+  <audio id="player" preload="metadata" controls style="display:block; margin-top:12px; width:100%;">
+    <source src="song.wav" type="audio/wav">
+  </audio>
+
+  <script>
+    const btn = document.getElementById("playBtn");
+    const player = document.getElementById("player");
+    btn.addEventListener("click", async () => {
+      try { await player.play(); } catch(e) { console.log(e); }
+    });
+  </script>
+
 </body>
 </html>
